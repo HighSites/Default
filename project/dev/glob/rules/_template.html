@@ -1,27 +1,19 @@
-<!-- {% set pageId = {% block pageId %}{% endblock %} %} -->
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- <link rel="shortcut icon" href="@imgs/favicon.png" type="image/x-icon">
-    <link rel="preload" as="style" href="style/{{ pageId }}style.css" onload="this.onload=null;this.rel='stylesheet'"> -->
-    <!-- <style> {% include "pages/{{ pageId }}/criticalCss.css" %} </style> -->
     <script defer src="js/app.min.js"></script>
 
-    <title>{% block title %}{% endblock %}</title>
+    <title>{{pageId}}: {% block title %}{% endblock %}</title>
 </head>
-
 <body>
     <div class="wrapper">
-        <header>{% include "pages/global/header/_header.html" %}</header>
-        {% block page-content %}
-            
+        <header>{% include "./parts/header/_header.html" %}</header>
+        {% block pageContent %}
         {% endblock %}
-        <footer>{% include "pages/global/footer/_footer.html" %}</footer>
+        <footer>{% include "./parts/footer/_footer.html" %}</footer>
     </div>
 </body>
 </html>

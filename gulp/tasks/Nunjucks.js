@@ -4,10 +4,14 @@ import size from "gulp-size";
 import htmlmin from "gulp-htmlmin";
 import versionNumber from "gulp-version-number";
 import nunjucksRender from "gulp-nunjucks-render";
+import rename from "gulp-rename";
 
 const njk = () => {
     return $.gulp.src($.path.html.src)
     .pipe($.plumber($.conf.plumber))
+    .pipe(rename(function (file) {
+      file.dirname = ''; //flatten the directories
+    }))
 		.pipe(nunjucksRender($.conf.nunjucksRender))
 		.pipe($.replace('@imgs/', $.path.imgs.dest_cat))
 
