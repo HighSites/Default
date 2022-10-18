@@ -81,7 +81,7 @@ let fontsStyle = () => {
 				'black': 900
 			};
 			fontWeight = weightCompilance[fontWeight.toLowerCase()] || 400;
-			if(varSupport.length > 1) {
+			if (varSupport.length > 1) {
 				console.warn('\x1b[41m%s\x1b[0m\x1b[33m%s\x1b[0m', 'Attention!!!\nVariable font was detected!\t\tPlease go to the fonts style file and correct it! The information below might help you:\n', `fonts style file path: ${$.path.fonts.styleFile},\n* correcting variable fonts weight: go to the sorce (or font file) and look for the min & max values then write them at weight property like diapason(exp: weight: 100 900)\n* non-variable dublicats need to be transfered nder support-not media: just take the support rule from variable font declaration and insert 'not' before the rule `)
 			}
 			if ($.path.css_preproc[$.path.css_preproc.length - 3] == 'a')

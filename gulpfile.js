@@ -47,8 +47,7 @@ const build = $.gulp.series (
     // $.gulp.parallel(for_html, for_styles, for_imgs, for_scripts, svgSprite)
     // $.gulp.parallel(for_html, for_styles, for_imgs, for_scripts)
     // $.gulp.parallel(for_html, for_styles, for_imgs)
-    // $.gulp.parallel(for_html, for_styles)
-    $.gulp.parallel(for_html)
+    $.gulp.parallel(for_html, for_styles)
 );
 
 const dev = $.gulp.series (
