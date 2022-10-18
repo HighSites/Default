@@ -18,6 +18,7 @@ export default {
     root: pathDest,
     from: pathSrc,
     fin: pathFin,
+    system: pathSystem,
     rootName: rootName,
     css_preproc: css_preproc,
 
@@ -29,7 +30,7 @@ export default {
     
     style: {
         src: pathPages + `/*/*.${css_preproc}`,
-        srcNot: pathPages + `/*/_*.${css_preproc}`,
+        srcNot: pathPages + `/*/!*.${css_preproc}`,
         watch: pathSrc + `/**/*.${css_preproc}`,
         dest: pathDest + '/style',
         system: pathSystem + '/_styles'
