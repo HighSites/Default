@@ -1,9 +1,9 @@
 import del from 'del';
 
-const clear = () => {
+let clear = () => {
     if($.conf.isDev)
-        return del([$.path.root+"/*/", "!"+$.path.imgs.dest]);
-    return del($.path.root);
+        return del([$.path.root+"/*", "!"+$.path.imgs.dest, '!'+$.path.fonts.dest]);
+    return del([$.path.root, $.path.fonts.styleFile]);
 }
 
 export default clear;

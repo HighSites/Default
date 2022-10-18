@@ -39,28 +39,27 @@ import for_scripts from './gulp/tasks/Js.js';
 import for_fonts from "./gulp/tasks/Fonts.js";
 import svgSprite from './gulp/tasks/svgSprite.js';
 import zip from './gulp/tasks/Zip.js';
-import gitDeploy from './gulp/tasks/GH_deploy.js';
 
 
 const build = $.gulp.series (
     clear, 
     for_fonts,
-    $.gulp.parallel(for_html, for_styles, for_imgs, for_scripts, svgSprite)
+    // $.gulp.parallel(for_html, for_styles, for_imgs, for_scripts, svgSprite)
 );
 
 const dev = $.gulp.series (
     build,
-    $.gulp.parallel(watcher, server)
+    // $.gulp.parallel(watcher, server)
 );
 
 const preProd = $.gulp.series (
     build,
-    server
+    // server
 );
 
 const prod = $.gulp.series (
     build,
-    zip
+    // zip
 );
 
 const play = server;
