@@ -9,10 +9,10 @@ import gulpif from "gulp-if";
 import replace from "gulp-replace";
 import notify from "gulp-notify";
 
-const Alert = (message) => {
+let Alert = (message) => {
     return notify({
-            title:"REMINDER",
-            message: message
+        title: "REMINDER",
+        message: message
     });
 }
 
@@ -41,41 +41,39 @@ import svgSprite from './gulp/tasks/svgSprite.js';
 import zip from './gulp/tasks/Zip.js';
 
 
-const build = $.gulp.series (
-    clear, 
+let build = $.gulp.series(
+    clear,
     for_fonts,
     for_styles,
-    // $.gulp.parallel(for_html, for_imgs, for_scripts, svgSprite)
-    // $.gulp.parallel(for_html, for_imgs, for_scripts)
-    $.gulp.parallel(for_html, for_imgs)
+    $.gulp.parallel(for_html, for_imgs, for_scripts, svgSprite)
 );
 
-const dev = $.gulp.series (
+let dev = $.gulp.series(
     build,
-    // $.gulp.parallel(watcher, server)
+    $.gulp.parallel(watcher, server)
 );
 
-const preProd = $.gulp.series (
+let preProd = $.gulp.series(
     build,
-    // server
+    server
 );
 
-const prod = $.gulp.series (
+let prod = $.gulp.series(
     build,
-    // zip
+    zip
 );
 
-const play = server;
+let play = server;
 
-var mode = dev;
+let mode = dev;
 
-if ($.conf.isPlay) 
+if ($.conf.isPlay)
     mode = play;
 
-if ($.conf.isPreProd) 
+if ($.conf.isPreProd)
     mode = preProd;
 
-if ($.conf.isProd) 
+if ($.conf.isProd)
     mode = prod;
 
 export default mode;

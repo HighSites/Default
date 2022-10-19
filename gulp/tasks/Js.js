@@ -1,6 +1,6 @@
 import webpack from "webpack-stream";
 
-const compile = () => {
+let compile = () => {
     return $.gulp.src($.path.script.src, {sourcemaps: $.conf.isDev})
     .pipe($.plumber($.conf.plumber))
     .pipe(webpack($.conf.webpack))

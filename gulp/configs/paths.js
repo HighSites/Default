@@ -37,7 +37,7 @@ export default {
     },
 
     script: {
-        src: pathGlob + '/*.js',
+        src: pathSrc + '/**/*.js',
         watch: pathSrc + '/**/*.js',
         dest: pathDest + '/js/'
     },
@@ -45,7 +45,7 @@ export default {
     imgs: {
         src: [pathPages + "/*/media/**/", pathGlobAssets + "/media/**/"],
         get watch() {
-            return this.src.forEach((path) => path+='*.*')
+            return this.src.map(path => path +'*.*')
         },
         dest_cat: "media/",
         get dest() {

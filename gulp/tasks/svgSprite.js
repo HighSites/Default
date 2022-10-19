@@ -1,6 +1,6 @@
 import svgSprite from 'gulp-svg-sprite';
 
-const sprite = () => {
+let sprite = () => {
     return $.gulp.src($.path.svgicons.src)
     .pipe($.plumber($.conf.plumber))
     .pipe(svgSprite($.conf.svgSprite))
