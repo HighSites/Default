@@ -43,9 +43,9 @@ export default {
     },
 
     imgs: {
-        src: [pathPages + "/*/media/**/*.*", pathGlobAssets + "/media/**/*.*"],
+        src: [pathPages + "/*/media/**/", pathGlobAssets + "/media/**/"],
         get watch() {
-            return this.src;
+            return this.src.forEach((path) => path+='*.*')
         },
         dest_cat: "media/",
         get dest() {

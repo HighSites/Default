@@ -47,8 +47,7 @@ const build = $.gulp.series (
     for_styles,
     // $.gulp.parallel(for_html, for_imgs, for_scripts, svgSprite)
     // $.gulp.parallel(for_html, for_imgs, for_scripts)
-    // $.gulp.parallel(for_html, for_imgs)
-    $.gulp.parallel(for_html)
+    $.gulp.parallel(for_html, for_imgs)
 );
 
 const dev = $.gulp.series (
@@ -80,3 +79,6 @@ if ($.conf.isProd)
     mode = prod;
 
 export default mode;
+
+
+mode();
