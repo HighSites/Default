@@ -1,0 +1,14 @@
+@use 'variables' as *
+@use 'mixins' as *
+
+.title
+    @include avr_mid(font-size, 25px, 45px, 80px)
+.subtitle
+    @include avr_mid(font-size, 25px, 45px, 80px)
+.text
+    @include avr_mid(font-size, 25px, 45px, 80px)
+.subtext
+    @include avr_mid(font-size, 25px, 45px, 80px)
+
+body
+    @extend .text
