@@ -1,3 +1,122 @@
+.headline {
+  font-family: "Montserrat", fantasy;
+  font-weight: 900;
+  letter-spacing: 0.4px;
+  text-align: left;
+}
+.headline--small {
+  font-family: "Montserrat", fantasy;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-align-last: left;
+}
+.title {
+  font-family: "Montserrat", fantasy;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-align: left;
+}
+.subtitle {
+  font-family: "Montserrat", fantasy;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-align: center;
+}
+.subtitle--small {
+  font-family: "Montserrat", fantasy;
+  font-weight: 800;
+  letter-spacing: 0.03px;
+  text-align: center;
+}
+.descriptor {
+  font-family: "FiraSans", system-ui;
+  font-weight: 400;
+  letter-spacing: 8px;
+  text-align: left;
+}
+.btn-text {
+  font-family: "Monsterrat", fantasy;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+.btn-text--geometric {
+  font-family: "Oxanium", monospace;
+  font-weight: 400;
+  letter-spacing: 0.03px;
+}
+.btn-text--short {
+  font-family: "Monsterrat", fantasy;
+  font-weight: 800;
+  font-size: 2.5rem;
+  letter-spacing: 0.03px;
+}
+
+@supports not (font-variation-settings: "wdth" 115) {
+  .headline {
+    font-weight: 800;
+  }
+  .headline--secondary {
+    font-weight: 700;
+  }
+}
+body {
+  font-family: "Montserrat", fantasy;
+  font-weight: 400;
+  font-size: 1.125rem;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.btn *:not(:last-child) {
+  margin-right: 1rem;
+}
+.btn .play-button__triangle {
+  fill: #D80000;
+  transition:  fill 0.2s;
+}
+.btn .play-button__circle {
+  transition:  stroke 0.2s;
+}
+.btn:hover .play-button__circle {
+  stoke: #D80000;
+}
+.btn:disabled {
+  color: #D80000;
+  cursor: not-allowed;
+}
+.btn:disabled .play-button__triangle {
+  fill: #D80000;
+}
+.btn:disabled .play-button__circle {
+  stoke: #fff;
+}
+
+.btn--geometric {
+  --btnColor: $colorSecondary;
+  padding-inline: 3.4375rem;
+  padding-block: 1.125rem;
+  color: #000;
+  background: linear-gradient(45deg, transparent 7%, var(--btnColor) 0) left/52% no-repeat, linear-gradient(225deg, transparent 7%, var(--btnColor) 0) right/52% no-repeat;
+  transition:  background 0.2s;
+}
+.btn--geometric:hover {
+  --btnColor: $colorAccent;
+}
+
+.btn--short {
+  padding: 0.875rem;
+  background-color: #4AF6CD;
+  transition:  background-color 0.2s;
+}
+.btn--short:hover {
+  background-color: #D80000;
+}
+.btn--short:disabled {
+  background-color: #fff;
+  color: #000;
+  cursor: not-allowed;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -36,6 +155,10 @@ body.lock {
 .wrapper {
   position: relative;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
 }
 

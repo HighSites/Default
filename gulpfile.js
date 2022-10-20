@@ -78,5 +78,3 @@ if ($.conf.isProd)
 
 export default mode;
 
-
-mode();

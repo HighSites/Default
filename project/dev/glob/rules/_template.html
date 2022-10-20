@@ -18,7 +18,7 @@
     <body>
         <div class="wrapper">
             <header class="header">{% include "./parts/header/_header.html" %}</header>
-            {% block pageContent %}{% endblock %}
+            <main>{% block pageContent %}{% endblock %}</main>
             <footer class="footer">{% include "./parts/footer/_footer.html" %}</footer>
         </div>
     </body>
