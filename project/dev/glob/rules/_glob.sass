@@ -20,16 +20,38 @@ img
     vertical-align: top
 
 button
+    padding: 0
+    border: none
     cursor: pointer
-    font: inheri
+    font: inherit
     background: none
 
 //custom glob rules
 
 body
-    background-color: $colorBg
+    position: relative
+    margin: 0
+    background-color: var(--color-bg)
+    @include anim(color background-color, long)
+    &::after
+        content: ''
+        display: inline-block
+        position: absolute
+        z-index: -1
+        width: 100%
+        height: 100%
+        top: 0
+        left: 0
+        background-color: rgba(#000, .5)
+        opacity: 0
+        @include anim(opacity)
+
     &.lock
         overflow: hidden
+        &::after
+            opacity: 1
+            z-index: auto
+
 
 .wrapper
     position: relative
@@ -45,6 +67,6 @@ main
 
 .container
     position: relative
-    @include avr_mid(padding-inline, 30px, 50px, 80px)
+    @include avr(padding-inline, 28px, 210px)
     margin: auto
     max-width: $widthMax

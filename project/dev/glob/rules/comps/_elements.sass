@@ -3,7 +3,7 @@
 
 .btn
     *:not(:last-child)
-        margin-right: rem(16px)
+        margin-right: rem(2 * $unit)
     .play-button__triangle
         fill: $colorAccent
         @include anim(fill)
@@ -23,19 +23,19 @@
         cursor: not-allowed
 
 .btn--geometric
-    $angleSize: 7%
-    --btnColor: $colorSecondary
-    padding-inline: rem(55px)
-    padding-block: rem(18px)
+    $angleSize: 8%
+    --btnColor: #{$colorSecondary}
+    padding-inline: rem(7 * $unit)
+    padding-block: rem(2 * $unit)
     color: $colorBg
     background: linear-gradient(45deg, transparent $angleSize, var(--btnColor) 0) left/52% no-repeat, linear-gradient(180deg + 45deg, transparent $angleSize, var(--btnColor) 0) right/52% no-repeat //52% (not 50%) is used to avoid a lin in the center (occurs in edge browser, for example)
     @include anim(background)
 
     &:hover
-        --btnColor: $colorAccent
+        --btnColor: #{$colorAccent}
 
 .btn--short
-    padding: rem(14px)
+    padding: rem(2 * $unit)
     background-color: $colorPositive
     @include anim(background-color, color)
 
